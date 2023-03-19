@@ -264,7 +264,7 @@
     - 동시에 DB에 접근할 때 어떻게 제어할 것인지에 대한 설정
     - 4가지 격리 수준 존재
         
-        ![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20-%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8E%E1%85%A5%E1%86%AF%20836e42b7075b4f9cb887d8a0ca5cc3c1/Untitled.png)
+        ![Transaction Isolation Levels](https://user-images.githubusercontent.com/65756225/226169870-3d7059a7-12c4-4d46-b9c5-e987ae939853.png)
         
         - READ UNCOMMITTED
             - 커밋 전의 트랜잭션의 변경사항이 다른 트랜잭션이 읽는 것을 허용
@@ -273,7 +273,7 @@
                 <aside>
                 💡 Dirty Read?
                 
-                ![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20-%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8E%E1%85%A5%E1%86%AF%20836e42b7075b4f9cb887d8a0ca5cc3c1/Untitled%201.png)
+                ![Dirty Read](https://user-images.githubusercontent.com/65756225/226169862-ecd683ef-39c2-4888-8761-ee1e092cac68.png)
                 
                 - 데이터 부정합 현상
                 - Tx A가 롤백되면 Tx B 입장에서는 무효가 된 데이터를 처리하게 된다.
@@ -291,7 +291,7 @@
             
             - 커밋 되기 전엔 트랜잭션 이전의 값을 가져오고, 커밋이 되면 반영된 값을 가져온다.
             
-            ![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20-%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8E%E1%85%A5%E1%86%AF%20836e42b7075b4f9cb887d8a0ca5cc3c1/Untitled%202.png)
+            ![Non-Repeatable Read](https://user-images.githubusercontent.com/65756225/226169866-c61d423d-a03d-4d1e-9a2d-3d6edeb190c4.png)
             
             - Tx A가 commit 되기 전에는 이전 값을, commit 되면 트랜잭션 반영된 값을 읽음
             - Tx B 입장에서는 한 트랜잭션에서 여러 번 select 하는데 값이 달라짐.
@@ -381,7 +381,7 @@
             - 조회 시 발견한 인덱스 레코드에 대해 UPDATE 쿼리처럼 row 및 관련 인덱스에 Lock을 설정함.
 - 2 Phase Lock
     
-    ![Untitled](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20-%20%E1%84%89%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8E%E1%85%A5%E1%86%AF%20836e42b7075b4f9cb887d8a0ca5cc3c1/Untitled%203.png)
+    ![2 Phase Lock](https://user-images.githubusercontent.com/65756225/226169871-80bfd4d5-5447-4d6a-90f9-57640d20f0d0.png)
     
     - 트랜잭션들의 직렬화 보장을 위해서 동시성을 제어하는 기법
     - 데드락은 방지할 수 없다.
@@ -412,8 +412,6 @@
 [데이터베이스 버퍼매니저(BUFFER MANAGER)란 무엇인가? | 개발자 이동욱](https://dongwooklee96.github.io/post/2021/12/29/데이터베이스-버퍼매니저buffer-manager란-무엇인가.html)
 
 [[DB] 트랜잭션 : Log](https://inor.tistory.com/16)
-
-네이버 글 요약
 
 [동기식 입출력 함수 - sync(), fsync(), fdatasync()](https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=neakoo35&logNo=30131080582)
 
