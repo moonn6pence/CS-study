@@ -95,7 +95,7 @@
             
             - 커밋 되기 전엔 트랜잭션 이전의 값을 가져오고, 커밋이 되면 반영된 값을 가져온다.
             
-            ![Non-Repeatable Read](https://user-images.githubusercontent.com/65756225/230903239-8989d9d4-dc53-4d8b-9269-502d162be0d3.png)
+            ![Non-Repeatable Read](https://user-images.githubusercontent.com/65756225/230904394-721d2f72-260f-464a-bf91-a7b6570a73f9.png)
             
             - Tx A가 commit 되기 전에는 이전 값을, commit 되면 트랜잭션 반영된 값을 읽음
             - Tx B 입장에서는 한 트랜잭션에서 여러 번 select 하는데 값이 달라짐.
